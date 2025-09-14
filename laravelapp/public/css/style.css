@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.head {
+    padding: 20px 0;
+}
+
+.result {
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.result[data-rarity="normal"] {
+    border: 1px solid silver;
+}
+
+.result[data-rarity="rare"] {
+    border: 1px solid gold;
+}
+
+.result[data-rarity="normal"] .result_head {
+    background: silver;
+}
+
+.result[data-rarity="rare"] .result_head {
+    background: gold;
+}
+
+.result_rarity {
+    font-size: 12px;
+}
+
+.result_head {
+    padding: 10px 0;
+}
+
+.result_image {
+    padding: 20px;
+}
+
+.foot {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.foot_item {
+    width: 50%;
+}
+
+.foot_item a {
+    display: block;
+    border: solid 1px dodgerblue;
+    padding: 20px;
+    color: dodgerblue;
+    text-decoration: none;
+}
