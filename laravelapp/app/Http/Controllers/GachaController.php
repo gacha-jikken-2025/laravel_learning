@@ -22,14 +22,20 @@ class GachaController extends Controller
 
         // レアかノーマルかの抽選
         if($box_rate > $draw) {
-            $rarity = 'rare';
+            $rarity = '1';
         }
         else {
-            $rarity = 'normal';
+            $rarity = '0';
         }
 
         // 抽選されたアイテム
-        $result = Item::item_draw($rarity);
+        // $result = Item::item_draw($rarity);
+
+        // 抽選されたレアリティで絞り込み
+        $item_box = Item::where('rarity', '=', $rarity);
+
+        // 絞り込みされたアイテムの中からランダムで取得
+        $result = $item_box->inRandomOrder()->get()->first();
         
         // index.blade.phpに$productsをわたす
         return view('gacha/gacha', ['result' => $result, 'rate' => $box_rate]);

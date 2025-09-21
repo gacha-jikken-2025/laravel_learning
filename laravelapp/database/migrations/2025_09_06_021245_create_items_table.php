@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('items', function (Blueprint $table) {
             $table->id();
             $table->string('item_name')->comment('アイテムの名前');
-            $table->string('rarity')->comment('アイテムのレアリティ');
+            $table->integer('rarity')->comment('アイテムのレアリティ');
             $table->string('image')->comment('画像');
             $table->timestamps();
         });
