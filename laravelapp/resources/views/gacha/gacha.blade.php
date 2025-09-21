@@ -12,7 +12,7 @@
             <div class="result" data-rarity="{{ $result->rarity }}">
                 <div class="result_head">
                     <h2>{{ $result->item_name }}</h2>
-                    <p class="result_rarity">{{ $result->rarity }}</p>
+                    <p class="result_rarity">{{ $result->rarity == 0 ? "ノーマル" : "レア"}}</p>
                 </div>
                 <figure class="result_image">
                     <img src="{{ asset($result->image) }}" alt="{{ $result->item_name }}">

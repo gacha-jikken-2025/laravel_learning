@@ -9,7 +9,7 @@ class Item extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
+    /* protected $fillable = [
         'item_name',
         'rarity',
     ];
@@ -23,5 +23,5 @@ class Item extends Model
         $get_item = $item_box->inRandomOrder()->get()->first();
 
         return $get_item;
-    }
+    } */
 }

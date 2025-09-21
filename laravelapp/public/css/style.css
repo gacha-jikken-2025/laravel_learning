@@ -21,19 +21,19 @@
     overflow: hidden;
 }
 
-.result[data-rarity="normal"] {
+.result[data-rarity="0"] {
     border: 1px solid silver;
 }
 
-.result[data-rarity="rare"] {
+.result[data-rarity="1"] {
     border: 1px solid gold;
 }
 
-.result[data-rarity="normal"] .result_head {
+.result[data-rarity="0"] .result_head {
     background: silver;
 }
 
-.result[data-rarity="rare"] .result_head {
+.result[data-rarity="1"] .result_head {
     background: gold;
 }
 
