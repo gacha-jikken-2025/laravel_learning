@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 // localhost:8000/gacha にアクセスしたらGachaControllerのshow関数を呼び出す
-Route::get('/gacha/{str}', 'App\Http\Controllers\GachaController@show');
+Route::get('/gacha/{id}', 'App\Http\Controllers\GachaController@show');
 
 // localhost:8000/gacha にアクセスしたらGachaControllerのgacha1関数を呼び出す
 // Route::get('/gacha', 'App\Http\Controllers\GachaController@gacha1');
