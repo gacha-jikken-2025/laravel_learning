@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('item_name')->comment('アイテムの名前');
             $table->integer('rarity')->comment('アイテムのレアリティ');
-            $table->string('image')->comment('画像');
+            $table->string('code')->comment('アイテムのコード');
             $table->timestamps();
         });
     }

@@ -6,11 +6,12 @@ namespace App\Http\Controllers;
 use App\Models\Gacha;
 use App\Models\Item;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class GachaController extends Controller
 {
 
-    public function show(Request $request, $id){
+    public function gacha(Request $request, $id){
 
         $request->merge(['id' => $id]);
 
@@ -46,7 +47,11 @@ class GachaController extends Controller
             $result = $item_box->inRandomOrder()->get()->first();
             
             // index.blade.phpに$productsをわたす
-            return view('gacha/gacha', ['result' => $result, 'rate' => $box_rate]);
+            // return view('gacha/gacha', ['result' => $result, 'rate' => $box_rate]);
+
+            // Log::info('result', ['result' => $result, 'rate' => $box_rate]);
+
+            return response()->json(['result' => $result, 'rate' => $box_rate]);
         } catch (\Exception $e) {
             return false;
         }
