@@ -1,5 +1,5 @@
-import TopPage from "@/components/page/TopPage";
+import GachaTop from "@/components/page/GachaTop";
 
 export default function Page() {
-  return <TopPage />;
+  return <GachaTop />;
 }
