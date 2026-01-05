@@ -5,20 +5,25 @@ namespace App\Http\Controllers;
 // Productモデルを呼び出す
 use App\Models\Gacha;
 use App\Models\Item;
-use Illuminate\Http\Request;
+use Exception;
+// use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class GachaController extends Controller
 {
 
-    public function show(Request $request, $id){
-
-        $request->merge(['id' => $id]);
-
-        $request->validate([
-            'id' => ['required', 'integer', 'min:1', 'max:2'],
-        ]);
+    public function gacha($id){
 
         try {
+
+            if(is_int($id)) {
+                throw new Exception("not integer");
+            }
+
+            if($id > 2) {
+                throw new Exception("nothing gacha id");
+            }
+
             // ガチャの種類
             $box = Gacha::box_select($id);
 
@@ -46,9 +51,13 @@ class GachaController extends Controller
             $result = $item_box->inRandomOrder()->get()->first();
             
             // index.blade.phpに$productsをわたす
-            return view('gacha/gacha', ['result' => $result, 'rate' => $box_rate]);
+            // return view('gacha/gacha', ['result' => $result, 'rate' => $box_rate]);
+
+            // Log::info('result', ['result' => $result, 'rate' => $box_rate]);
+
+            return response()->json(['result' => $result, 'rate' => $box_rate]);
         } catch (\Exception $e) {
-            return false;
+            Log::error("error" . $e->getMessage() . "Line:" . $e->getLine());
         }
     }
 }

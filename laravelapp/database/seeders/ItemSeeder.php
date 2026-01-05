@@ -19,37 +19,37 @@ class ItemSeeder extends Seeder
             [
                 'item_name' => '魔剣',
                 'rarity' => '1',
-                'image' => 'img/01_maken.png',
+                'code' => 'maken',
             ],
             [
                 'item_name' => '聖剣',
                 'rarity' => '1',
-                'image' => 'img/02_seiken.png',
+                'code' => 'seiken',
             ],
             [
                 'item_name' => '倶利伽羅剣',
                 'rarity' => '1',
-                'image' => 'img/03_ookurikara_ken.png',
+                'code' => 'ookurikara_ken',
             ],
             [
                 'item_name' => '草薙剣',
                 'rarity' => '0',
-                'image' => 'img/04_kusanagino_tsurugi.png',
+                'code' => 'kusanagino_tsurugi',
             ],
             [
                 'item_name' => '青銅剣',
                 'rarity' => '0',
-                'image' => 'img/05_seidouki_ken.png'
+                'code' => 'seidouki_ken'
             ],
             [
                 'item_name' => 'スコップ',
                 'rarity' => '0',
-                'image' => 'img/06_scoop.png'
+                'code' => 'scoop'
             ],
             [
                 'item_name' => '竹刀',
                 'rarity' => '0',
-                'image' => 'img/07_shinai.png'
+                'code' => 'shinai'
             ],
         ]);
     }
